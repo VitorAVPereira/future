@@ -1,4 +1,5 @@
-const { app, cors, express, port} = require('./src/config/app/appConfig')
+const { app, express, port} = require('./src/config/app/appConfig')
+const cors = require('cors');
 const userRoutes = require('./src/routes/user.routes')
 const bodyParser = require('body-parser')
 
@@ -6,7 +7,7 @@ app.use(express.json())
 app.use(bodyParser.json())
 app.use(
   cors({
-    origin: 'https://future-api.vercel.app/',
+    origin: 'https://future-api.vercel.app',
     methods: ['GET', 'POST'], 
     allowedHeaders: ['Content-Type', 'Authorization']
   })
