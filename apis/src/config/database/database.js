@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config()
 
-const pwdAtlas = process.env.PASSWORD_ATLAS
-const URI = `mongodb+srv://vitorpereira:${pwdAtlas}@wallet.pxoaf83.mongodb.net/?retryWrites=true&w=majority`
+const MONGODB_URL = process.env.MONGODB_URL
+const URI = MONGODB_URL
 
 const dbConnection = async() => {
   if(!global.mongoose){
