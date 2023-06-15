@@ -13,8 +13,7 @@ export default function Navbar({ links }) {
     }
 
     const cookies = getCookies(undefined);
-    const username = cookies['username'];
-
+    const username = decodeURIComponent(cookies['username']);
     return (
         <HydrationProvider>
             <Server>

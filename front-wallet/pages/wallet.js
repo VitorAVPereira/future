@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function WalletPage() {
     return (
-        <div className="">
+        <div className="bg-[url('https://res.cloudinary.com/dpemaw1yo/image/upload/v1686156987/pexels-hasan-albari-1229861_oeisc5.jpg')]">
             <Navbar links={[
                 {href: '/wallet', text: 'Home'},
             ]} />
