@@ -5,13 +5,7 @@ const bodyParser = require('body-parser')
 
 app.use(express.json())
 app.use(bodyParser.json())
-app.use(
-  cors({
-    origin: 'https://future-api.vercel.app',
-    methods: ['GET', 'POST'], 
-    allowedHeaders: ['Content-Type', 'Authorization']
-  })
-);
+app.use(cors());
 app.use('/', userRoutes)
 app.listen(port, () => {
   console.log(`Aplicação na porta: ${port}`)
