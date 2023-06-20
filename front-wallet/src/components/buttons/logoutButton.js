@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router';
-import { setCookie } from 'cookies-next';
+import { deleteCookie } from 'cookies-next';
 import styles from './logoutButton.module.css'
 
 export default function LogoutButton() {
   const router = useRouter();
 
   const logout = () => {
-    setCookie(undefined, 'token', '', {
-      maxAge: 0,
-    });
+    deleteCookie('refreshToken');
+    deleteCookie('accessToken');
+    deleteCookie('username');
     router.push('/login');
   };
 

@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 app.use(express.json())
 app.use(bodyParser.json())
 app.use(cors());
-app.use('/', userRoutes)
+app.use('/auth', userRoutes)
 app.listen(port, () => {
   console.log(`Aplicação na porta: ${port}`)
 })

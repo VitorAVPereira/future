@@ -15,7 +15,7 @@ export default function LoginPage() {
     const loginUser = async (event) => {
         event.preventDefault();
 
-        const res = await fetch('https://future-api.vercel.app/login', {
+        const res = await fetch('https://future-api.vercel.app/auth/login', {
             body: JSON.stringify({
                 email: email,
                 password: password,

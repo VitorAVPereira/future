@@ -22,7 +22,7 @@ export default function RegisterPage() {
             return;
         }
 
-        const res = await fetch('https://future-api.vercel.app/register', {
+        const res = await fetch('https://future-api.vercel.app/auth/register', {
             body: JSON.stringify({
                 name: name,
                 email: email,

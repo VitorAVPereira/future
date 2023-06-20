@@ -21,7 +21,7 @@ export default function Navbar({ links }) {
             </Server>
             <Client>
                 {username && (
-                    <nav className="bg-slate-400 w-full fixed top-0 h-16 flex items-center">
+                    <nav className="bg-zinc-800 w-full fixed top-0 h-16 flex items-center">
                         <img width="120" src="https://res.cloudinary.com/dpemaw1yo/image/upload/v1686156961/Design_sem_nome-removebg-preview_jxifvk.png" />
                         <div className="flex justify-between items-center w-full h-full mr-5">
                             <ul className="flex justify-between items-center list-none m-0">
