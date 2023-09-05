@@ -2,8 +2,5 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "vercel": "^32.1.0"
-  },
-  "overrides": {
-    "semver": "~7.5.2"
-    }
+  }
 }
