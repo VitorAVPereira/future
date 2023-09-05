@@ -18,7 +18,7 @@ export default function RegisterPage() {
         event.preventDefault();
 
         if (password !== confirmPassword) {
-            console.error('Passwords do not match');
+            console.error('Passwords does not match');
             return;
         }
 

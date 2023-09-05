@@ -31,7 +31,7 @@ export default function LoginPage() {
             setCookie('accessToken', result.accessToken, { maxAge: 30 * 24 * 60 * 60, path: '/' });
             setCookie('refreshToken', result.refreshToken, { maxAge: 30 * 24 * 60 * 60, path: '/' });
             setCookie('username', result.user.name, { maxAge: 30 * 24 * 60 * 60, path: '/' });
-            router.push('/wallet');
+            router.push('/homepage');
         } else {
             console.error(result);
         }
