@@ -14,7 +14,7 @@ const Navbar = () => {
     const router = useRouter()
     const cookies = getCookies(undefined);
     const username = decodeURIComponent(cookies['username']);
-    let { isLoggedIn } = username ? true : false
+    let { isLoggedIn } = username ? true : false;
    
     console.log(isLoggedIn);
     const handleNav = () => {
