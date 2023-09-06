@@ -14,8 +14,9 @@ const Navbar = () => {
     const router = useRouter()
     const cookies = getCookies(undefined);
     const username = decodeURIComponent(cookies['username']);
-
+    let { isLoggedIn } = username ? true : false;
    
+    console.log(isLoggedIn);
     const handleNav = () => {
         setNav(!nav)
     }
@@ -41,46 +42,6 @@ const Navbar = () => {
             <div>Loading...</div>
         </Server>
         <Client>
-        {(!username) ? (
-                <div style={{backgroundColor: `${color}`}} className='fixed left-0 top-0 w-full z-10 ease-in duration-300'>
-                <div className='max-w-[1240px] m-auto flex justify-between items-center p-4 text-white'>
-                    <Link href='/homepage'>
-                        <h1 style={{color: `${textColor}`}} className='font-bold text-4xl'>Fullvision</h1>
-                    </Link>
-                    <ul style={{color: `${textColor}`}} className='hidden sm:flex align-middle'>
-                        <li className='p-4 mt-1'>
-                            <Link href='/index'>Início</Link>
-                        </li>
-                        <li className='p-4 mt-1'>
-                            <Link href='/index'>Contato</Link>
-                        </li>
-                    </ul>
-
-
-                    {/** Mobile Button */}
-                    <div onClick={handleNav} className='block sm:hidden z-10'>
-                        {nav 
-                        ? <AiOutlineClose size={20} style={{color: `${textColor}`}} /> 
-                        : <AiOutlineMenu size={20} style={{color: `${textColor}`}} />}
-                    </div>
-                    {/** Mobile Menu */}
-                    <div className={nav 
-                        ? 'sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
-                        :
-                        'sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
-                    }>
-                        <ul>
-                            <li className='p-4 text-4xl hover:text-gray-500'>
-                                <Link href='/index'>Início</Link>
-                            </li>
-                            <li className='p-4 text-4xl hover:text-gray-500'>
-                                <Link href='/index'>Contato</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            ) : (
                 <div style={{backgroundColor: `${color}`}} className='fixed left-0 top-0 w-full z-10 ease-in duration-300'>
                     <div className='max-w-[1240px] m-auto flex justify-between items-center p-4 text-white'>
                         <Link href='/homepage'>
@@ -93,6 +54,7 @@ const Navbar = () => {
                             <li className='p-4 mt-1'>
                                 <Link href='/contact'>Contato</Link>
                             </li>
+                            
                             <li className='p-4 mt-1'>
                                 <span>Bem vindo, {username}!</span>
                             </li>
@@ -131,8 +93,6 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                ) 
-        }
         </Client>
     </HydrationProvider>
   )
